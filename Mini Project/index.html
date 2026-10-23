@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Inventory & Analytics Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div>
+            <h1>Product Inventory</h1>
+            <p>Interactive Inventory & Analytics Dashboard</p>
+        </div>
+        <span class="status">● System Online</span>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <div>
+                <h2>Inventory Overview</h2>
+                <p>Manage products, prices and inventory analytics.</p>
+            </div>
+            <button id="addBtn">+ Add New Product</button>
+        </section>
+
+        <section class="stats">
+            <article class="stat-card">
+                <span>Total Products</span>
+                <h2 id="totalProducts">0</h2>
+            </article>
+            <article class="stat-card">
+                <span>Total Inventory Value</span>
+                <h2 id="totalValue">₹0.00</h2>
+            </article>
+            <article class="stat-card">
+                <span>Budget Products</span>
+                <h2 id="budgetCount">0</h2>
+            </article>
+            <article class="stat-card">
+                <span>Premium Products</span>
+                <h2 id="premiumCount">0</h2>
+            </article>
+        </section>
+
+        <section class="panel">
+            <h2>Inventory Tools</h2>
+            <div class="toolbar">
+                <input id="searchInput" type="text"
+                       placeholder="Search product name...">
+                <button id="searchBtn" class="secondary">Search</button>
+                <button id="showAllBtn" class="secondary">Show All</button>
+            </div>
+
+            <div class="toolbar">
+                <input id="maxPrice" type="number" min="0"
+                       placeholder="Maximum price (₹)">
+                <button id="filterBtn" class="secondary">
+                    Filter by Price
+                </button>
+            </div>
+            <p id="message" class="message" aria-live="polite">
+                Ready to manage inventory.
+            </p>
+        </section>
+
+        <section class="panel">
+            <h2>Tax & Discount Calculator</h2>
+            <div class="calculator">
+                <label>
+                    Tax (%)
+                    <input id="taxRate" type="number" min="0"
+                           max="100" value="5">
+                </label>
+                <label>
+                    Discount (%)
+                    <input id="discountRate" type="number" min="0"
+                           max="100" value="10">
+                </label>
+                <button id="calculateBtn">Calculate</button>
+            </div>
+            <div class="result">
+                <p>Subtotal: <strong id="subtotal">₹0.00</strong></p>
+                <p>Discount: <strong id="discountAmount">₹0.00</strong></p>
+                <p>Tax: <strong id="taxAmount">₹0.00</strong></p>
+                <p>Final Amount: <strong id="finalAmount">₹0.00</strong></p>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="table-heading">
+                <h2>Product Inventory</h2>
+                <span id="resultCount">0 products</span>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productTable"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Filtered Products</h2>
+            <ul id="filteredList" class="report-list">
+                <li>No filter applied yet.</li>
+            </ul>
+        </section>
+
+        <section class="panel">
+            <h2>Formatted Inventory Report</h2>
+            <ul id="summaryList" class="report-list"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Interactive Product Inventory & Analytics Dashboard</p>
+        <p>Built with HTML, CSS and JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
